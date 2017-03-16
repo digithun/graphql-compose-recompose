@@ -9,6 +9,12 @@ type RelationResolverArg = {
     projection: any & { fieldName: number };
 }
 type GraphQLFieldsArgsMapper = any;
+export type RejectFn = (error: any) => void;
+export type ResolveFn = (result: any) => void;
+export type MiddlewareArgs = { rp: ResolverParams, resolve: ResolveFn, reject: RejectFn };
+export type MiddlewareFn = (args: MiddlewareArgs) => void;
+/** Like wrapResolver but write with middleware style */
+export function addResolverMiddleware(resolverName: String, middleware: MiddlewareFn);
 /** Create resolve middleware for Resolver */
 export function wrapResolve(resolverName: String, resolveParamsMapper: ResolveParamsMapper);
 /** Rename InputType argument name of resolver */
