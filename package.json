@@ -2,6 +2,7 @@
   "name": "graphql-compose-recompose",
   "version": "0.0.1-beta4",
   "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "repository": "git@github.com:digithun/graphql-compose-recompose.git",
   "author": "Rungsikorn Rungsikavanich <rungsikorn@me.com>",
   "license": "MIT",
