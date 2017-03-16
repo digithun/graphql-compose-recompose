@@ -3,9 +3,10 @@
 ## GraphQL Compose Recompose
 
 This library help your life easier by create composing function that workwith GraphQL compose
+> Inspire by React utility lib [Recompose](https://github.com/acdlite/recompose)
 ## Installation
 ```bash
-  $ npm install graphql-compose graphql graphql-compose-connection
+  $ npm install graphql-compose graphql graphql-compose-connection graphql-compose-recompose
 ``` 
 
 ## Example
