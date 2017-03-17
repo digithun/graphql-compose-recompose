@@ -13,14 +13,20 @@ type GraphQLFieldsArgsMapper = {
         resolve: (source: any, args: any, context: any) => void
     }
 };
-type GraphQLFieldsArgsMapper = any;
 export type RejectFn = (error: any) => void;
 export type ResolveFn = (result: any) => void;
 export type MiddlewareArgs = { rp: ResolverParams, resolve: ResolveFn, reject: RejectFn };
 export type MiddlewareFn = (args: MiddlewareArgs) => void;
-/** Like wrapResolver but write with middleware style */
+
+/** 
+ * Create middleware function wrap resolver
+ * @param {resolverName} string - resolver name
+ * @param {middleware} middleware - a callback which type ({rp: resolveParameter, resolve, reject}, next) => void
+ * @return {Function} a enhance typeComposer
+ */
 export function addResolverMiddleware(resolverName: String, middleware: MiddlewareFn);
-/** Create resolve middleware for Resolver */
+
+/** Add wrap for Resolver */
 export function wrapResolve(resolverName: String, resolveParamsMapper: ResolveParamsMapper);
 /** Rename InputType argument name of resolver */
 export function renameResolverArg(resolverName: String, oldName: String, newName: String);
