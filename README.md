@@ -49,3 +49,12 @@ exports.TC = compose(
 ## API
 
 - TBD
+
+## TODO
+- [ ] Wraping whole Graphql compose library
+- [ ] Add real life example
+- [ ] Unit test
+- [ ] Type definition
+- [ ] Use Commitizen
+- [ ] Add CI Build
+- [ ] Coverage
