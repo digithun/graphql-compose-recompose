@@ -8,6 +8,11 @@ type RelationResolverArg = {
     argsMapper: any & { argumentName: (source, args, context) => void };
     projection: any & { fieldName: number };
 }
+type GraphQLFieldsArgsMapper = {
+    [key: string]: {
+        resolve: (source: any, args: any, context: any) => void
+    }
+};
 type GraphQLFieldsArgsMapper = any;
 export type RejectFn = (error: any) => void;
 export type ResolveFn = (result: any) => void;
