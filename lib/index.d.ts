@@ -1,4 +1,5 @@
 
+type ResolveFunction = (source: any, args: any, context: any) => void
 type ResolverParams = {source: any, args: any, context: any};
 type ResolveParamsMapper = (resolverParams: ResolverParams, oldResolver: (params: ResolverParams) => any) => void | Promise;
 type RelationResolverArg = {
@@ -10,7 +11,7 @@ type RelationResolverArg = {
 }
 type GraphQLFieldsArgsMapper = {
     [key: string]: {
-        resolve: (source: any, args: any, context: any) => void
+        resolve: ResolveFunction
     }
 };
 export type RejectFn = (error: any) => void;
@@ -33,6 +34,7 @@ export function renameResolverArg(resolverName: String, oldName: String, newName
 
 /** Add relation nested object from fieldName */
 export function addRelation(fieldName: String, relationArgs: RelationResolverArg);
+export function extendField(fieldName: String, extendFieldOptions: { description: string; resolve: ResolveFunction})
 
 /** Add Resolver to TC */
 export function addResolver(resolverObject);
