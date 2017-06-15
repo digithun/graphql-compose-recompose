@@ -18,7 +18,10 @@ export {
   setFields,
   addFields,
   removeField,
-  extendField
+  extendField,
+  removeOtherFields,
+  reorderFields,
+  deprecateFields
 }
 
 
