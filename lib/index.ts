@@ -1,5 +1,5 @@
-import { setFields, addFields } from './TypeComposer'
-function compose (...funcs) {
+import { setFields, addFields, removeField, removeOtherFields, reorderFields, deprecateFields, extendField } from './TypeComposer'
+function compose(...funcs) {
   if (funcs.length === 0) {
     return arg => arg
   }
@@ -16,7 +16,9 @@ function compose (...funcs) {
 export {
   compose,
   setFields,
-  addFields
+  addFields,
+  removeField,
+  extendField
 }
 
 

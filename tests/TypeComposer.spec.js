@@ -1,4 +1,4 @@
-const { setFields, compose, addFields } = require('../lib')
+const { setFields, compose, addFields, extendField } = require('../lib')
 const { TypeComposer } = require('graphql-compose')
 const { GraphQLString } = require('graphql')
 
@@ -31,6 +31,20 @@ describe('Typecomposer compose test', () => {
     )(createFooType())
     const modType = createFooType()
     modType.addFields(fieldToAdd)
+
+    expect(composedType).toEqual(expect.anything())
+    expect(composedType.getFields()).toEqual(modType.getFields())
+  })
+
+  it('should extendFields equal to Typecomposer.extendField', () => {
+    const extendConfig = {
+      resolve: () => 'hello'
+    }
+    const composedType = compose(
+      extendField('bar', extendConfig)
+    )(createFooType())
+    const modType = createFooType()
+    modType.extendField('bar', extendConfig)
 
     expect(composedType).toEqual(expect.anything())
     expect(composedType.getFields()).toEqual(modType.getFields())
