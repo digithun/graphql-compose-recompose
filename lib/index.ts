@@ -1,4 +1,4 @@
-import { setFields, addFields, removeField, removeOtherFields, reorderFields, deprecateFields, extendField } from './TypeComposer'
+import { setFields, addFields, addResolver, removeField, removeOtherFields, reorderFields, deprecateFields, extendField } from './TypeComposer'
 function compose(...funcs) {
   if (funcs.length === 0) {
     return arg => arg
@@ -21,7 +21,8 @@ export {
   extendField,
   removeOtherFields,
   reorderFields,
-  deprecateFields
+  deprecateFields,
+  addResolver
 }
 
 
