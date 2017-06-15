@@ -74,7 +74,9 @@ exports.TC = compose(
 ```
 
 ## TODO
-- [ ] Wraping whole Graphql compose library
+- [x] Wraping Typecomposer api
+- [ ] Wraping InputTypecomposer api
+- [ ] Wraping Resolver api
 - [ ] Add real life example
 - [ ] Unit test
 - [x] Type definition
